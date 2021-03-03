@@ -66,7 +66,7 @@ div {text-align: center;}
   </div>
   <div class="column">
   <figure>
-  <a href="http://localhost:8080/Patient_Management_System/register">
+  <a href="http://localhost:8080/Patient_Management_System/adminlogin">
   <img src="<spring:url value="/image/MedicalSymbol.png"/>" alt="Avatar" style="width:200px" height="200px"></a>
   <br/>
   <figcaption>Management access</figcaption>

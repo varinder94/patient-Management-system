@@ -55,13 +55,10 @@
 			<version>1.4.200</version>
 		</dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
+
+		
+		
 
 	<build>
 		<finalName>Patient_Management_System</finalName>

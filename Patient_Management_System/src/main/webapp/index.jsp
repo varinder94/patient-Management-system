@@ -7,7 +7,7 @@
 <h1 style="color:green; text-align:center;">Patient Management System</h1>
 <h2 style="color:green;text-align:center;">&#9830;&nbsp;&nbsp;You can book your Appoinments on a click.</h2>
 
-<h1 style="color:green; text-align:center; text-decoration: none"><a style="text-decoration: none;color:green;" href="http://localhost:8080/Patient_Management_System/main">Click here to start</a></h1>
+<h1 style="color:green; text-align:center; text-decoration: none"><a style="text-decoration: none;color:green;" href="http://localhost:8080/Patient_Management_System/register">Click here to start</a></h1>
 <br/>
 <br/>
 <br/><br/><br/>

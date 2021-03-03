@@ -11,6 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -21,26 +22,28 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.csis3275")
+
+//Add to read the database config
 @PropertySource("classpath:database.properties")
 
 public class SpringMVCConfig implements WebMvcConfigurer {
-	
-	 @Autowired
-	 Environment environment;
-	 private final String URL = "url";
-	 private final String USER = "dbuser";
-	 private final String DRIVER = "driver";
-	 private final String PASSWORD = "dbpassword";
-	 
-	 @Bean
-	 DataSource dataSource() {
-	 DriverManagerDataSource driverPatientSource = new DriverManagerDataSource();
-	 driverPatientSource.setUrl(environment.getProperty(URL));
-	 driverPatientSource.setUsername(environment.getProperty(USER));
-     driverPatientSource.setPassword(environment.getProperty(PASSWORD));
-    driverPatientSource.setDriverClassName(environment.getProperty(DRIVER));
-	 return driverPatientSource;
-	 }
+
+	@Autowired
+	Environment environment;
+	private final String URL = "url";
+	private final String USER = "dbuser";
+	private final String DRIVER = "driver";
+	private final String PASSWORD = "dbpassword";
+
+	@Bean
+	DataSource dataSource() {
+		DriverManagerDataSource driverPatientSource = new DriverManagerDataSource();
+		driverPatientSource.setUrl(environment.getProperty(URL));
+		driverPatientSource.setUsername(environment.getProperty(USER));
+		driverPatientSource.setPassword(environment.getProperty(PASSWORD));
+		driverPatientSource.setDriverClassName(environment.getProperty(DRIVER));
+		return driverPatientSource;
+	}
 
 	@Bean
 	public ViewResolver viewResolver() {
@@ -57,6 +60,16 @@ public class SpringMVCConfig implements WebMvcConfigurer {
 		patientSource.setBasename("messages");
 		return patientSource;
 	}
+
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(20971520); //20 MB
+		multipartResolver.setMaxInMemorySize(20971520);  // 20 MB
+		return multipartResolver;
+	}
+	
+
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry patientRegister) {
 
@@ -64,6 +77,5 @@ public class SpringMVCConfig implements WebMvcConfigurer {
 		// Register resource handler for images
 		patientRegister.addResourceHandler("/image/**").addResourceLocations("/WEB-INF/image/");
 	}
-
 
 }

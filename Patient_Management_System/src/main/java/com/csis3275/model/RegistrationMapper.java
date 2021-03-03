@@ -18,6 +18,7 @@ public class RegistrationMapper implements RowMapper<Registration>{
 		register.setBirthDay(rs.getDate("BirthDay"));
 		register.setPassword(rs.getString("telephone"));
 		register.setTelephone(rs.getString("password"));
+		register.setId(rs.getInt("id"));
 		return register;
 	}
 

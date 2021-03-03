@@ -14,9 +14,9 @@
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 <style>
-body, html {
+html {
 	height: 100%;
-	margin: 0;
+	margin: auto;
 }
 
 body {
@@ -74,6 +74,13 @@ body {
 				Name</label>
 			<div class="col-md-9">
 				<form:input path="lastname" cssClass="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+		<label for="id" class="col-md-3 control-label">
+				Health Card Number</label>
+			<div class="col-md-9">
+				<form:input path="id" cssClass="form-control" />
 			</div>
 		</div>
 		<div class="form-group">

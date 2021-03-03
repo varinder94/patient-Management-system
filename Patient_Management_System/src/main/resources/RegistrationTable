@@ -1,5 +1,6 @@
 DROP TABLE PATIENTREGISTRATION IF EXISTS;
 CREATE TABLE PATIENTREGISTRATION (
+id Integer,
 firstName VARCHAR(30),
 lastName VARCHAR(50),
 email VARCHAR(20),
@@ -9,7 +10,7 @@ sex VARCHAR(20),
 birthDay DATE
  );
 
-INSERT INTO PATIENTREGISTRATION (firstName, lastName,email,password,sex,birthDay,telephone) VALUES ('Akwinder', 'kaur','kaura95@gmail.com','akpunia','female','1994-08-21','7786889090');
-INSERT INTO PATIENTREGISTRATION (firstName, lastName,email,password,sex,birthDay,telephone) VALUES ('Varinder', 'kaur','kaurv6@gmail.com','vkaur','female','1990-08-21','7786887070');
-INSERT INTO PATIENTREGISTRATION (firstName, lastName,email,password,sex,birthDay,telephone) VALUES ('saman', 'kaur','skaur77@gmail.com','smKaur','female','1991-01-06','6045678909');
-INSERT INTO PATIENTREGISTRATION (firstName, lastName,email,password,sex,birthDay,telephone) VALUES ('sukh', 'kaur','sukh177@gmail.com','sukaur','female','1992-07-11','2364597821');
+INSERT INTO PATIENTREGISTRATION (id,firstName, lastName,email,password,sex,birthDay,telephone) VALUES (1234,'Akwinder', 'kaur','kaura95@gmail.com','akpunia','female','1994-08-21','7786889090');
+INSERT INTO PATIENTREGISTRATION (id,firstName, lastName,email,password,sex,birthDay,telephone) VALUES (2345,'Varinder', 'kaur','kaurv6@gmail.com','vkaur','female','1990-08-21','7786887070');
+INSERT INTO PATIENTREGISTRATION (id,firstName, lastName,email,password,sex,birthDay,telephone) VALUES (3456,'saman', 'kaur','skaur77@gmail.com','smKaur','female','1991-01-06','6045678909');
+INSERT INTO PATIENTREGISTRATION (id,firstName, lastName,email,password,sex,birthDay,telephone) VALUES (4537,'sukh', 'kaur','sukh177@gmail.com','sukaur','female','1992-07-11','2364597821');

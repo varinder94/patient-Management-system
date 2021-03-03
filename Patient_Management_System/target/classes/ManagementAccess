@@ -1,0 +1,12 @@
+DROP TABLE Management IF EXISTS;
+CREATE TABLE Management (
+firstName VARCHAR(50),
+lastName VARCHAR(50),
+email VARCHAR(20),
+password VARCHAR(50),
+sex VARCHAR(20),
+Role VARCHAR(20)
+ );
+
+INSERT INTO Management (firstName, lastName,email,password,sex,role) VALUES ('varinder', 'dhadwal','vd671@gmail.com','vk@22','female','admin')
+INSERT INTO Management (firstName, lastName,email,password,sex,role) VALUES ('akwinder', 'punia','punia6@gmail.com','punia@95','female','management')
