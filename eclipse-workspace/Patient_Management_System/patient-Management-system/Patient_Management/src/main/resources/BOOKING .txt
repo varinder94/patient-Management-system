@@ -1,0 +1,13 @@
+DROP TABLE BOOKING IF EXISTS;
+CREATE TABLE BOOKING (
+id Integer,
+name VARCHAR(30),
+last VARCHAR(50),
+dateP DATE,
+timeP VARCHAR(30),
+doctor VARCHAR(30)
+
+
+ );
+INSERT INTO BOOKING (id,name, last,dateP,timeP,doctor) 
+VALUES (2345,'varinder', 'kaur','2021-04-04','16:45','Mr.desousa- Eye Checkup'); 
