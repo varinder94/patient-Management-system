@@ -1,0 +1,14 @@
+DROP TABLE feedback IF EXISTS;
+CREATE TABLE feedback (
+id Integer NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+last VARCHAR(50),
+doctor VARCHAR(30),
+goodPoint VARCHAR(200),
+rating Integer,
+experience VARCHAR(300),
+suggestions VARCHAR(300),
+PRIMARY KEY (`id`)
+
+ );
+ 
