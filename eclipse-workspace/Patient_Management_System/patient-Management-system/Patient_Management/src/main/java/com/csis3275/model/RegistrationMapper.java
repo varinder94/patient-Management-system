@@ -9,7 +9,7 @@ public class RegistrationMapper implements RowMapper<Registration>{
 
 	@Override
 	public Registration mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
+	
 		Registration register=new Registration();
 		register.setFirstname(rs.getString("firstname"));
 		register.setLastname(rs.getString("lastName"));

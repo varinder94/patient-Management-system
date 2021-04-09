@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Patient Login Form</title>
+<title>Admin Login Form</title>
 <style>
 html{
 height:100%;

@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Registration {
+	
 	private int id;
 	private String firstname;
 	private String lastname;
@@ -64,5 +65,6 @@ public class Registration {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	
 }

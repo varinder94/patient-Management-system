@@ -23,26 +23,46 @@ body {
 	background-size: cover;
 }
 
-.form-horizontal {
-	width: 500px;
-	background-position: center; . Doctor_data { width : 500px;
+. Doctor_data { width : 500px;
 	float: right;
 	background-position: center;
 }
+
+.btn {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #008CBA;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 9px #999;
+}
+h1{padding-left:550px;}
+.Doctor_table{
+padding-left:300px;
+}
+.form-horizontal{
+padding-left:550px;
+}
+tr,td{padding:10px;}
 </style>
 </head>
 <body>
 	<div class="container">
 
 
-		<hr />
+		
 		<c:if test="${ message !=null }">
 			<div class="Doctor_data" role="alert">${message}</div>
 		</c:if>
+		<h1>Available Doctors List</h1>
 		<table class="Doctor_table">
-			<tr>
-				<td><h1>Available Doctors List</h1></td>
-			</tr>
+			
 			<tr>
 
 				<td>ID</td>
@@ -65,14 +85,16 @@ body {
 					<td>${doctor.sex}</td>
 					<td>${doctor.specialization}</td>
 
+					<td><a class="btn"  href="${pageContext.request.contextPath}/editDoctors/?id=${doctor.id}">Edit</a></td>
 					<td><a
-						href="${pageContext.request.contextPath}/editDoctors/?id=${doctor.id}">Edit</a></td>
-					<td><a
-						href="${pageContext.request.contextPath}/deleteDoctors/?id=${doctor.id}">Delete</a></td>
+						href="${pageContext.request.contextPath}/deleteDoctors/?id=${doctor.id}"
+						 class="btn">Delete</a></td>
 				</tr>
+				
 			</c:forEach>
+			
 		</table>
-		<br /> <br />
+		<br /> 
 		<form:form action="${pageContext.request.contextPath}/showDoctors/"
 			cssClass="form-horizontal" method="post" modelAttribute="doctor">
 			<h2>Doctor Form</h2>
@@ -140,8 +162,7 @@ body {
 					General Health
 					<form:checkbox path="specialization" value="General Health" />
 
-					<br>
-					<br>
+					<br> <br>
 				</div>
 			</div>
 			<br />

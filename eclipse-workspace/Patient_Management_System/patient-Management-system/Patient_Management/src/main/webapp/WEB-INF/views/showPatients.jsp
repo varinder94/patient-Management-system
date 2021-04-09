@@ -19,32 +19,75 @@ html {
 body {
 	background-image: url("image/back1.jpg");
 	background-repeat: no-repeat;
-
 	background-position: center;
 	background-size: cover;
 }
+
 .form-horizontal {
 	width: 500px;
 	background-position: center;
 }
-.Patient_data{
+
+.Patient_data {
 	width: 500px;
-	float:right;
+	float: right;
 	background-position: center;
 }
 
+.patient_table {
+	padding-left: 250px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #008CBA;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 9px #999;
+}
+
+.icon {
+	height: 80px;
+	width: 100px;
+	border-radius: 50%;
+	float: left;
+}
+
+.icon2 {
+	height: 80px;
+	width: 200px;
+	border-radius: 50%;
+	float: right;
+}
+
+h1 {
+	padding-left: 550px;
+}
 </style>
 </head>
 <body>
+	<header>
+		<a href="http://localhost:8080/Patient_Management/main"><img
+			src="image/HomeIcon.jpg" alt="homeicon" class="icon" /></a> <a
+			href="http://localhost:8080/Patient_Management/"><img
+			src="image/BcHospital.png" class="icon2" /></a>
+	</header>
 	<div class="container">
 
-		
-		<hr />
+
 		<c:if test="${ message !=null }">
 			<div class="Patient_data" role="alert">${message}</div>
 		</c:if>
-		<table class="patient table">
-          <tr><td><h1>Patient List</h1></td></tr>
+		<h1 style="color:#008CBA;">Patient List</h1>
+		<table class="patient_table">
+
 			<tr>
 				<td>Health Card Number</td>
 				<td>First name</td>
@@ -52,112 +95,32 @@ body {
 				<td>sex</td>
 				<td>BirthDay</td>
 				<td>Email</td>
-				<td>Password</td>
 				<td>Telephone</td>
+				<td>Password</td>
 				<td>Edit</td>
 				<td>Delete</td>
 			</tr>
-			<c:forEach var="patient" items="${PatientList}">
+			<c:forEach var="patients" items="${PatientList}">
 				<tr>
-					<td>${patient.id}</td>
-					<td>${patient.firstname}</td>
-					<td>${patient.lastname}</td>
-					<td>${patient.sex}</td>
-					<td>${patient.birthDay}</td>
-					<td>${patient.email}</td>
-					<td>${patient.password}</td>
-					<td>${patient.telephone}</td>
+					<td>${patients.id}</td>
+					<td>${patients.firstname}</td>
+					<td>${patients.lastname}</td>
+					<td>${patients.sex}</td>
+					<td>${patients.birthDay}</td>
+					<td>${patients.email}</td>
+					<td>${patients.password}</td>
+					<td>${patients.telephone}</td>
 
 					<td><a
-						href="${pageContext.request.contextPath}/editPatient/?id=${patient.id}">Edit</a></td>
+						href="${pageContext.request.contextPath}/editPatient/?id=${patients.id}"
+						class="btn">Edit</a></td>
 					<td><a
-						href="${pageContext.request.contextPath}/deletePatient/?id=${patient.id}">Delete</a></td>
+						href="${pageContext.request.contextPath}/deletePatient/?id=${patients.id}"
+						class="btn">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-	
-		<form:form action="${pageContext.request.contextPath}/createPatient/"
-			cssClass="form-horizontal" method="post" modelAttribute="patient">
-			<h2>New Patient Form</h2>
-			<div class="form-group">
-				<label for="id" class="col-md-3 controllabel">Health card
-					Number</label>
-				<div class="col-md-9">
-					<form:input path="id" type="number" cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-			<div class="form-group">
-				<label for="firstname" class="col-md-3 controllabel">First
-					Name</label>
-				<div class="col-md-9">
-					<form:input path="firstname" type="text" cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-
-			<div class="form-group">
-				<label for="lastname" class="col-md-3 controllabel">Last
-					Name</label>
-				<div class="col-md-9">
-					<form:input path="lastname" type="text" cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-			<div class="form-group">
-				<label for="sex" class="col-md-3 control-label">Sex</label>
-				<form:radiobutton path="sex" value="Male" />
-				Male
-				<form:radiobutton path="sex" value="Female" />
-				Female
-				<form:errors path="sex" style="color:red" />
-			</div>
-			<br />
-			<div class="form-group">
-				<label>Date of birth</label><br />
-				<form:input type="date" path="birthDay" id="birthDay" />
-				<form:errors path="birthDay" style="color:red" />
-			</div>
-			<br />
-			<div class="form-group">
-				<label for="email" class="col-md-3 controllabel">Email</label>
-				<div class="col-md-9">
-					<form:input path="email" type="email" placeholder="abc@gmail.com"
-						cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-			<div class="form-group">
-				<label for="password" class="col-md-3 controllabel">Password</label>
-				<div class="col-md-9">
-					<form:input path="password" type="password" placeholder=" "
-						cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-			<div class="form-group">
-				<label for="telephone" class="col-md-3 controllabel">Telephone</label>
-				<div class="col-md-9">
-					<form:input path="telephone" type="number" cssClass="form-control" />
-				</div>
-			</div>
-			<br />
-			<div class="form-group">
-				<!-- Button -->
-				<div class="col-md-offset-3 col-md-9">
-					<form:button cssClass="btn btnprimary">Submit</form:button>
-				</div>
-			</div>
-		</form:form>
-
-
-
 	</div>
+
 </body>
 </html>

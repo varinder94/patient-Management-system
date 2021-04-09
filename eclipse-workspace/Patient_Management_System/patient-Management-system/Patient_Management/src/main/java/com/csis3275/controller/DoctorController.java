@@ -25,10 +25,15 @@ public class DoctorController {
 	@Autowired
 	Doctorsdao doctorDaoImpl;
 	
+	@ModelAttribute("doctor")
+	public Doctor setupAddForm() {
+		return new Doctor();
+	}
+	
 	@GetMapping("/doctorLogin")
 	public String init(Model admin) {
 		admin.addAttribute("msg", "Please Enter Your Login Details");
-		return "DoctorLogin";
+		return "doctorLogin";
 	}
 	
 	@PostMapping("/doctorLogin")
@@ -43,27 +48,23 @@ public class DoctorController {
 				return "DoctorDesh";
 			} else {
 				model.addAttribute("error", "Invalid Details or user name is taken");
-				return "DoctorLogin";
+				return "doctorLogin";
 			}
 
 		} else {
 			model.addAttribute("error", "Please enter Details");
-			return "DoctorLogin";
+			return "DoctorDesh";
 		}
 
 	}
 	
-	@ModelAttribute("doctor")
-	public Doctor setupAddForm() {
-		return new Doctor();
-	}
+	
 	// Thats a GET request from the browser to the URL below
 		@GetMapping("/showDoctors")
 		public String showDoctors(HttpSession session, Model model) {
-			// Get a list of students from the controller
+			
 			List<Doctor> doct = doctorDaoImpl.getAllDoctors();
 
-			// Add the results to the model
 			model.addAttribute("doctList", doct);
 			return "showDoctors";
 		}
@@ -72,24 +73,21 @@ public class DoctorController {
 		@PostMapping("/showDoctors")
 		public String createPatient(@ModelAttribute("doctor") Doctor createDoctor, Model model) {
 
-			// Create the student pass the object in.
+		
 			doctorDaoImpl.createNewDoctor(createDoctor);
 
-			// Get a list of students from the controller
 			List<Doctor> doct = doctorDaoImpl.getAllDoctors();
 			model.addAttribute("doctList", doct);
 
 			return "showDoctors";
 		}
 
-		// Get the student and display the form
+		// Get the Doctor and display the form
 		@GetMapping("/deleteDoctors")
 		public String deletePatient(@RequestParam(required = true) int id, Model model) {
 
-			// Get the student
 			doctorDaoImpl.deleteDoctor(id);
 
-			// Get a list of students from the controller
 			List<Doctor> doct = doctorDaoImpl.getAllDoctors();
 			model.addAttribute("doctList", doct);
 
@@ -98,11 +96,11 @@ public class DoctorController {
 			return "showDoctors";
 		}
 		
-		//Get the student and display the form
+		//Get the Doctor and display the form
 			@GetMapping("/editDoctors")
 			public String editPatient(@RequestParam(required = true) int id, Model model)	{
 						
-				//Get the student
+		
 				Doctor updatedDoct = doctorDaoImpl.getDoctorById(id);
 				model.addAttribute("doctor", updatedDoct);
 				
@@ -114,13 +112,13 @@ public class DoctorController {
 				
 				doctorDaoImpl.updateDoctor(updatedPatient);
 				
-				//Get a list of students from the controller
+	
 				List<Doctor> doctors = doctorDaoImpl.getAllDoctors();
 				model.addAttribute("doctor", doctors);
 			
 				model.addAttribute("message","Edited Student " + updatedPatient.getId());
 				
-				//We are redirecting to show students so that the GETMapping is executed again because our edit did not add the list of students to the model
+				
 				return "editDoctors";
 				
 			}

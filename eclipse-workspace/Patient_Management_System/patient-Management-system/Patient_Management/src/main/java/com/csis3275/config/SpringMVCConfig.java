@@ -58,6 +58,7 @@ public class SpringMVCConfig implements WebMvcConfigurer {
 		return viewPatientResolver;
 	}
 
+	
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource patientSource = new ResourceBundleMessageSource();

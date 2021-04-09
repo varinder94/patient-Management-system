@@ -3,6 +3,8 @@ package com.csis3275.model;
 public class AdminLogin {
 	private String adminemail;
 	private String adminPaddword;
+	
+	
 	public String getAdminemail() {
 		return adminemail;
 	}

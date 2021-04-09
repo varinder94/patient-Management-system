@@ -23,21 +23,40 @@ body {
 .form {
 	margin: auto;
 }
+
+.icon {
+	height: 80px;
+	width: 100px;
+	border-radius: 50%;
+}
+
+.icon2 {
+	height: 100px;
+	width: 200px;
+	border-radius: 50%;
+	float: right;
+}
+.btn{
+background-color:#008CBA;
+color:white;
+}
 </style>
 </head>
 <body>
-
+	<header>
+		<a href="http://localhost:8080/Patient_Management/main"><img
+			src="image/HomeIcon.jpg" alt="homeicon" class="icon" /></a> <a
+			href="http://localhost:8080/Patient_Management/"><img
+			src="image/BcHospital.png" class="icon2" /></a>
+	</header>
 
 	<table class="form">
-		<tr>
+		<tr style="text-align:center;">
 			<td>
 				<h2>Submitted Details</h2>
 			</td>
 		</tr>
-		<tr>
-			<td>Health Card Number:</td>
-			<td>${books.id}</td>
-		</tr>
+
 		<tr>
 			<td>First Name:</td>
 			<td>${books.name}</td>
@@ -66,8 +85,16 @@ body {
 			<td>Booking Doctor</td>
 			<td>${books.doctor}</td>
 		</tr>
+		<tr>
+			<td>Additional documents(such as medical history etc.)</td>
+			<td><a
+				href="http://localhost:8080/Patient_Management/fileupload"><input
+					type="submit" value="Submit additional documents" class="btn"> </a><br />
+			<br /></td>
+		</tr>
 
 	</table>
 
 </body>
 </html>
+

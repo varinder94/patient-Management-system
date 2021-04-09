@@ -1,0 +1,16 @@
+DROP TABLE treatment IF EXISTS;
+CREATE TABLE treatment (
+id Integer NOT NULL AUTO_INCREMENT,
+patientFirstName VARCHAR(30),
+patientLastName VARCHAR(50),
+patientMedicine VarCHAR(30),
+patientAlleries VARCHAR(200),
+medicinedoses Integer,
+specialNote VARCHAR(300),
+
+PRIMARY KEY (`id`)
+
+ );
+ INSERT INTO treatment (id,patientFirstName, patientLastName,patientMedicine,patientAlleries,medicinedoses,specialNote)  VALUES (1,'varinder', 'kaur','Calcium','Dust',1,'Rest Alot');
+INSERT INTO treatment (id,patientFirstName, patientLastNamepatientMedicine,patientAlleries,medicinedoses,specialNote) 
+ VALUES (2,'Akwinder', 'kaur','telenoal','Diary Products',2,'Drink water as much you can');

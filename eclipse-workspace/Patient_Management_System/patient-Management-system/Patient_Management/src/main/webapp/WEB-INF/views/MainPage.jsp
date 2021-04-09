@@ -10,9 +10,7 @@
 * {
   box-sizing: border-box;
 }
-body{
-background-image:url("image/background.png");
-}
+
 .column {
   float: left;
   width: 23.33%;
@@ -25,7 +23,7 @@ background-image:url("image/background.png");
   clear: both;
   display: table;
 }
-img {
+.img {
   border-radius: 50%;
   display: block;
   margin-left: auto;
@@ -34,12 +32,8 @@ img {
 }
 .back{
 
-  background-image: url("image/background.png");
-
- 
-  height: 90%; 
-
-  
+  background-image: url("image/back1.jpg");
+  height: 90%;  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,18 +42,38 @@ img {
 h4 {text-align: center;}
 p {text-align: center;}
 div {text-align: center;}
-
+.icon2{
+   height: 80px;
+	width: 200px;
+	border-radius: 50%;
+	float:right;
+}
+.icon{
+   height: 80px;
+	width: 150px;
+	border-radius: 50%;
+	float:left;
+}
 </style>
 <title>Patient Management</title>
 </head>
 <body class="back">
+
+<header>
+		<a href="http://localhost:8080/Patient_Management/"><img
+			src="image/HomeIcon.jpg" alt="homeicon" class="icon" /></a>
+			<a href="http://localhost:8080/Patient_Management/"><img src="image/BcHospital.png" class="icon2"/></a>
+	
+	</header>
+<br/><br/><br/>
 <h1></h1>
 	<div class="row">
- <h1>Please select the appropirate role to proceed further</h1>
+ 
   <div class="column">
   <figure>
   <a href="http://localhost:8080/Patient_Management/register">
-  <img src="<spring:url value="/image/Patienticon.png"/>" alt="Avatar" style="width:200px" height="200px"></a>
+  <img src="<spring:url value="/image/Patienticon.png"/>" alt="Avatar" class="img"
+  style="width:200px" height="200px"></a>
   <br/>
   <figcaption>Patient access</figcaption>
     </figure>
@@ -67,15 +81,15 @@ div {text-align: center;}
   <div class="column">
   <figure>
   <a href="http://localhost:8080/Patient_Management/adminlogin">
-  <img src="<spring:url value="/image/MedicalSymbol.png"/>" alt="Avatar" style="width:200px" height="200px"></a>
+  <img src="<spring:url value="/image/MedicalSymbol.png"/>" alt="Avatar" class="img" style="width:200px" height="200px"></a>
   <br/>
   <figcaption>Management access</figcaption>
   </figure>
   </div>
  <div class="column">
   <figure>
-  <a href="http://localhost:8080/Patient_Management/register">
-  <img src="<spring:url value="/image/doctorIcon.png"/>" alt="Avatar" style="width:200px" height="200px"></a>
+  <a href="http://localhost:8080/Patient_Management/doctorLogin">
+  <img src="<spring:url value="/image/doctorIcon.png"/>" alt="Avatar" class="img" style="width:200px" height="200px"></a>
   <br/>
   <figcaption>Doctor access</figcaption>
     </figure>

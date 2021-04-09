@@ -9,7 +9,7 @@ public class DoctorMapper implements RowMapper<Doctor>{
 
 	@Override
 	public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		Doctor doctor=new Doctor();
 		doctor.setId(rs.getInt("id"));
 		doctor.setFirstName(rs.getString("firstName"));

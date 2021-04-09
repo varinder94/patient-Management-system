@@ -23,16 +23,24 @@ body {
 	width: 100px;
 	border-radius: 50%;
 }
+.icon2 {
+	height: 100px;
+	width: 200px;
+	border-radius: 50%;
+	float:right;
+}
 </style>
 </head>
 <body>
 	<header>
 		<a href="http://localhost:8080/Patient_Management/main"><img
 			src="image/HomeIcon.jpg" alt="homeicon" class="icon" /></a>
+			<a href="http://localhost:8080/Patient_Management/"><img src="image/BcHospital.png" class="icon2"/></a>
 	</header>
 	<form:form name="submitForm" method="POST">
 		<div align="center">
 			<table>
+			<tr> <img src="image/logo1.png"/></tr><br/><br/>
 				<tr>
 					<td>User Name</td>
 					<td><input type="text" name="userName" /></td>
@@ -40,15 +48,17 @@ body {
 				<tr>
 					<td>Password</td>
 					<td><input type="password" name="password" /></td>
-				</tr>
+				</tr><br/>
 				<tr>
-					<td></td>
+					<td></td><br/>
 					<td><input type="submit" value="Submit" /></td>
 				</tr>
+			
 			</table>
-			<div style="color: red">${error}</div>
+			
 
 		</div>
 	</form:form>
+	
 </body>
 </html>

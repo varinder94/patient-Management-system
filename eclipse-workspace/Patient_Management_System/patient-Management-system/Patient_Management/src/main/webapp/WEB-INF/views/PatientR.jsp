@@ -45,6 +45,12 @@ body {
 	width: 100px;
 	border-radius: 50%;
 }
+.icon2 {
+	height: 100px;
+	width: 250px;
+	border-radius: 50%;
+	float:right;
+}
 </style>
 </head>
 
@@ -52,10 +58,12 @@ body {
 
 <body>
 	<header>
-		<a href="http://localhost:8080/Patient_Management/main"><img src="image/HomeIcon.jpg" alt="homeicon"
-			class="icon" /></a>
+		<a href="http://localhost:8080/Patient_Management/main"><img
+			src="image/HomeIcon.jpg" alt="homeicon" class="icon" /></a>
+		<a href="http://localhost:8080/Patient_Management/"><img src="image/BcHospital.png" class="icon2"/></a>
 	</header>
-	<a href="http://localhost:8080/Patient_Management/patientlogin"><img src="image/Login.jpg" class="login" alt="Login" /></a>
+	<a href="http://localhost:8080/Patient_Management/patientlogin"><img
+		src="image/Login.jpg" class="login" alt="Login" /></a>
 
 
 	<form:form action="${pageContext.request.contextPath}/register/"
@@ -67,7 +75,7 @@ body {
 			<div class="col-md-9">
 				<form:input path="firstname" cssClass="form-control" />
 			</div>
-		</div>
+		</div><br/>
 
 		<div class="form-group">
 			<label for="lastname" class="col-md-3 control-label">Last
@@ -76,26 +84,29 @@ body {
 				<form:input path="lastname" cssClass="form-control" />
 			</div>
 		</div>
+		<br/>
 		<div class="form-group">
-		<label for="id" class="col-md-3 control-label">
-				Health Card Number</label>
+			<label for="id" class="col-md-3 control-label"> Health Card
+				Number</label>
 			<div class="col-md-9">
 				<form:input path="id" cssClass="form-control" />
 			</div>
 		</div>
+		<br/>
 		<div class="form-group">
 			<label for="email" class="col-md-3 control-label">E-mail</label>
 			<div class="col-md-9">
 				<form:input path="email" cssClass="form-control" />
 			</div>
 		</div>
+		<br/>
 		<div class="form-group">
 			<label for="password" class="col-md-3 control-label">Password</label>
 			<div class="col-md-9">
 				<form:input path="password" cssClass="form-control" />
 			</div>
 		</div>
-
+<br/>
 		<div class="form-group">
 			<label for="sex" class="col-md-3 control-label">Sex</label>
 			<form:radiobutton path="sex" value="Male" />
@@ -104,13 +115,13 @@ body {
 			Female
 			<form:errors path="sex" style="color:red" />
 		</div>
-
+<br/>
 		<div class="form-group">
-			<label>Date of birth</label>
+			<label>Date of birth</label><br/>
 			<form:input type="date" path="birthDay" id="birthDay" />
 			<form:errors path="birthDay" style="color:red" />
 		</div>
-
+<br/>
 		<div class="form-group">
 			<label for="telephone" class="col-md-3 control-label">Phone
 				Number</label>
@@ -118,7 +129,7 @@ body {
 				<form:input path="telephone" cssClass="form-control" />
 			</div>
 		</div>
-
+<br/>
 
 		<div class="form-group">
 			<!-- Button -->

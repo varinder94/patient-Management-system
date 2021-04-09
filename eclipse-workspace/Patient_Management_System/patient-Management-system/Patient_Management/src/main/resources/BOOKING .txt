@@ -1,13 +1,15 @@
 DROP TABLE BOOKING IF EXISTS;
 CREATE TABLE BOOKING (
-id Integer,
+id Integer NOT NULL AUTO_INCREMENT,
 name VARCHAR(30),
 last VARCHAR(50),
 dateP DATE,
+doctor VARCHAR(30),
 timeP VARCHAR(30),
-doctor VARCHAR(30)
 
+
+
+PRIMARY KEY (`id`)
 
  );
-INSERT INTO BOOKING (id,name, last,dateP,timeP,doctor) 
-VALUES (2345,'varinder', 'kaur','2021-04-04','16:45','Mr.desousa- Eye Checkup'); 
+ 

@@ -1,6 +1,7 @@
 package com.csis3275.model;
 
 public class Doctor {
+	
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -50,5 +51,6 @@ public class Doctor {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+  
 
 }

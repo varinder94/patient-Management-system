@@ -14,17 +14,19 @@ import com.csis3275.model.RegistrationMapper;
 
 @Component
 public class Registrationdao {
-	JdbcTemplate jdbcTemplate;
+	static JdbcTemplate jdbcTemplate;
 	private final String SQL_GET_ALL = "select * from PATIENTREGISTRATION";
 	private final String SQL_INSERT_Patient = "insert into PATIENTREGISTRATION(firstname, lastname,email,password,sex,birthDay,telephone,id) values(?,?,?,?,?,?,?,?)";
 	 private final String FIND_Patient = "select * from PATIENTREGISTRATION where id = ?";
 	private final String SQL_UPDATE_Patient = "UPDATE PATIENTREGISTRATION set  firstname = ?, lastname  = ? , email=? , password=? , sex=? , birthDay=? , telephone=?  WHERE id = ?";
 	private final String SQL_DELETE_patient = "DELETE FROM PATIENTREGISTRATION WHERE id = ?";
-
+	
 	@Autowired
 	public Registrationdao(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+
+	
 
 	public Registration getPatientById(int id) {
 		return jdbcTemplate.queryForObject(FIND_Patient, new Object[] { id }, new RegistrationMapper());
@@ -69,6 +71,8 @@ public class Registrationdao {
 		return false;
 
 	}
+
+	
 
 	
 

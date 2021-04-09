@@ -52,6 +52,7 @@ public class RegistrationController {
 		List<Registration> patient = patientDaoImpl.getAllPatient();
 		model.addAttribute("patient", patient);
 
+		
 		return "Login";
 	}
 
@@ -70,7 +71,7 @@ public class RegistrationController {
 
 			if (patient == true) {
 				model.addAttribute("msg", user.getUserName());
-				return "upload";
+				return "PatientDesh";
 			} else {
 				model.addAttribute("error", "Invalid Details or user name is taken");
 				return "Login";
@@ -83,8 +84,8 @@ public class RegistrationController {
 
 	}
 
-	
 
+		
 	
 	
 	

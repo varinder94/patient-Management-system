@@ -2,7 +2,7 @@ package com.csis3275.model;
 
 
 
-import java.sql.Blob;
+
 import java.util.Date;
 
 
@@ -12,16 +12,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 public class Booking {
+	
 	private int id;
 	private String name;
 	private String last;
 	 private Date dateP;
 	 private String timeP;
 	 private String doctor;
-	 //private Blob file;
+
 	public MultipartFile file;
 	
-	public MultipartFile getFile() {
+
+		public MultipartFile getFile() {
 		return file;
 	}
 	public void setFile(MultipartFile file) {
@@ -58,20 +60,22 @@ public class Booking {
 	public void setLast(String last) {
 		this.last = last;
 	}
-	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getTimeP() {
 		return timeP;
 	}
 	public void setTimeP(String timeP) {
 		this.timeP = timeP;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	
 	
 	
 
