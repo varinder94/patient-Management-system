@@ -1,0 +1,9 @@
+DROP TABLE FILES_UPLOAD IF EXISTS;
+CREATE TABLE FILES_UPLOAD (
+id Integer NOT NULL AUTO_INCREMENT,
+file_name VARCHAR(200),
+file_description VARCHAR(300),
+file_data longBlob,
+PRIMARY KEY (`id`)
+
+ );
